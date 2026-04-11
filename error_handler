@@ -1,9 +1,9 @@
-/// if u see this u gey 
+// if u see this u gey 
 
 #include <SPI.h>
 #include <MFRC522.h>
 
-/// Pin configuration for MFRC522
+// Pin configuration for MFRC522
 #define SS_PIN 10   // SDA pin on MFRC522
 #define RST_PIN 9   // RST pin on MFRC522
 
@@ -20,7 +20,7 @@ void setup() {
   
   Serial.println("\n=== MFRC522 NFC Reader Initialization ===\n");
   
- / // Initialize SPI bus
+ / / Initialize SPI bus
   Serial.println("Step 1: Initializing SPI bus...");
   SPI.begin();
   Serial.println("✓ SPI bus initialized successfully!\n");
