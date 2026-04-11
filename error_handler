@@ -1,5 +1,3 @@
-// if u see this u gey 
-
 #include <SPI.h>
 #include <MFRC522.h>
 
