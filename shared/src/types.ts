@@ -15,13 +15,35 @@ export interface Conflict {
   id: string;
   aircraft1: string;
   aircraft2: string;
-  distance: number;
-  timeToClosestPoint: number;
-  minimumSeparation: number;
+  distance: number;              // current horizontal distance in NM
+  predictedMinDistance: number;  // predicted minimum horizontal distance at TCA (NM)
+  timeToClosestPoint: number;    // minutes until closest approach
+  minimumSeparation: number;     // required separation minima in NM
   severity: 'warning' | 'alert' | 'critical';
   detectedAt: number;
 }
 
+export interface ControllerInstruction {
+  aircraftId: string;
+  type: 'heading' | 'altitude' | 'speed';
+  value: number;
+  issuedAt: number;
+}
+
+export interface PrebuiltScenario {
+  id: string;
+  name: string;
+  description: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  duration: number;       // seconds
+  centerLat: number;
+  centerLon: number;
+  radarRange: number;     // NM
+  aircraft: Aircraft[];
+  objectives: string[];
+}
+
+// Legacy types kept for backward compatibility
 export interface TrainingScenario {
   id: string;
   name: string;
@@ -45,7 +67,7 @@ export interface ConflictDetectionRequest {
   aircrafts: Aircraft[];
   separationMinima: {
     horizontal: number; // nautical miles
-    vertical: number; // feet
+    vertical: number;   // feet
   };
 }
 
