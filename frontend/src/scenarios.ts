@@ -1,4 +1,4 @@
-import type { PrebuiltScenario } from '../../../shared/src/types.js';
+import type { PrebuiltScenario } from '../../shared/src/types.js';
 
 // All four scenarios use the New York ARTCC area (~lat 40-42, lon -72 to -76).
 // Aircraft positions are chosen so conflicts develop 4–8 minutes after start,

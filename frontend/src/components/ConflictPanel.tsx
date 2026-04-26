@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import type { Conflict } from '../../../shared/src/types.js';
 import './ConflictPanel.css';
 

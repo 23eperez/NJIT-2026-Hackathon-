@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import type { ConflictDetectionRequest } from '../../../shared/src/types.js';
+import type { ConflictDetectionRequest } from '../../shared/dist/types.js';
 import { ConflictDetectionService } from './conflictDetection.js';
 
 const app = express();

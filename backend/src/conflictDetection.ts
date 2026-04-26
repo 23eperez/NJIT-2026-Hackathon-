@@ -1,5 +1,5 @@
-import type { Aircraft, Conflict, ConflictDetectionRequest } from '../../../shared/src/types.js';
-import { degreesToRadians, calculateDistance } from '../../../shared/src/utils.js';
+import type { Aircraft, Conflict, ConflictDetectionRequest } from '../../shared/dist/types.js';
+import { degreesToRadians, calculateDistance } from '../../shared/dist/utils.js';
 
 const LOOK_AHEAD_MINUTES = 15;
 
