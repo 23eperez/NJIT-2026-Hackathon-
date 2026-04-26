@@ -13,6 +13,30 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// Live time simulation endpoint (EST timezone)
+app.get('/api/time', (_req, res) => {
+  const now = new Date();
+  const estFormatter = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+  
+  const estTime = estFormatter.format(now);
+  const iso = now.toISOString();
+  
+  res.json({
+    iso,
+    est: estTime,
+    timestamp: now.getTime(),
+    timezone: 'EST/EDT (America/New_York)',
+  });
+});
+
 // Conflict detection — now uses predictive look-ahead
 app.post('/api/detect-conflicts', (req, res) => {
   try {

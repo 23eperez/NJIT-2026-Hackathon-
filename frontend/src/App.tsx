@@ -3,6 +3,7 @@ import type { Aircraft, Conflict, ConflictDetectionRequest } from '../../shared/
 import { projectAircraftPosition } from '../../shared/src/utils.js';
 import { AircraftVisualization } from './components/AircraftVisualization';
 import { ConflictPanel } from './components/ConflictPanel';
+import { TimeDisplay } from './components/TimeDisplay';
 import { SCENARIOS } from './scenarios';
 import './App.css';
 
@@ -172,6 +173,8 @@ function App() {
           <span className="elapsed-timer">{elapsedLabel}</span>
         </div>
       </header>
+
+      <TimeDisplay elapsedSeconds={elapsedSeconds} isSimulating={isSimulating} />
 
       {apiError && <div className="api-error">{apiError}</div>}
 
